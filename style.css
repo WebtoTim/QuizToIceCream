@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: calc(18px + 0.390625vw);
+    background-color: rgb(8, 13, 32)
+}
+
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
+
+#quiz {
+    width: 50%;
+    height: auto;
+    display: flex;
+}
+
+#instructions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    overflow: scroll;
+    background-color: rgba(53, 214, 193, 0.767);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#heading {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+#startQuiz {
+    height: 40px;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.question {
+    width: 100%;
+    text-align: center;
+}
+
+.answerButton {
+    width: 20%;
+    padding: 5px;
+    margin: 10px 5px 0;
+}
+
+#moneyWin {
+    width: 90%;
+    margin: 10px 40px 0 40px;
+}
+
+#balance {
+    align-self: end;
+    margin-right: 16vw;
+
+    width: 250px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgb(191 191 191);
+    border-radius: 10px 10px 0 0;
+    border: 5px solid rgb(73, 25, 0);
+    border-bottom: none;
+    text-align: center;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+}
+
+#content {
+    width: clamp(60vw, 70vw, 80vw);
+    height: 80vh;
+    display: none;
+    border-radius: 10px;
+    border: 5px solid rgb(73, 25, 0);
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('image/roof.png');
+    background-repeat: repeat;
+    border-radius: 5px 5px 0 0;
+    font-size: clamp(1rem, 2rem, 3rem);
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+}
+
+header > h2 {
+    width: auto;
+    height: auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#shop {
+    width: 100%;
+    height: 55%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+#shop-waiter {
+    width: 80%;
+    height: 100%;
+    grid-area: 2 / 1 / 4 / 2;
+    justify-self: center;
+    display: flex;
+    align-items: end;
+
+}
+
+#waiter {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#speech-bubble {
+    grid-area: 1 / 1 / 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#conversation {
+    font-size: 18px;
+    width: 100%;
+}
+
+.text {
+    width: auto;
+    height: auto;
+    max-height: 60%;
+    display: flex;
+    margin: 5px;
+    padding: 15px;
+    background: rgb(232, 232, 232);
+    border: 1px solid rgb(94, 94, 94);
+    border-radius: 20px;
+    color: rgb(53, 53, 53);
+    overflow-y: auto;
+}
+
+#buttons {
+    width: 40%;
+    height: auto;
+    max-height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 10px;
+    background: rgb(232, 232, 232);
+    border: 1px solid rgb(94, 94, 94);
+    border-radius: 20px;
+    color: rgb(53, 53, 53);
+    overflow: hidden;
+}
+
+.accept, .decline, .finish, .restart {
+    width: 40%;
+    padding: 5px;
+}
+
+#menu {
+    width: auto;
+    height: 80%;
+    grid-area: 3 / 2;
+    align-self: end;
+    margin: 5px 5px 15px 5px;
+    display: none;
+    grid-template-rows: 30px 50% 50%;
+    grid-template-columns: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(133, 133, 133, 0.5);
+    overflow: hidden;
+}
+
+#menu > p {
+    grid-area: 1 / 1 / 2 / 1;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 900;
+}
+
+#iceCream {
+    grid-area: 2 / 1 / 4 / 1;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: scroll;
+    border-top: 1px solid rgba(133, 133, 133, 0.5);
+    padding-top: 5px;
+}
+
+#purchaseList {
+    display: none;
+    width: auto;
+    height: 100%;
+    grid-area: 3 / 2;
+    place-self: end;
+    margin: 5px 5px 15px 5px;
+    padding:  10px;
+    overflow: auto;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    border: 1px solid rgba(133, 133, 133, 0.5);
+    list-style: none;
+    text-transform: capitalize;
+}
+
+#purchaseList > div {
+    margin: 5px 0 10px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#purchaseList > li {
+    margin-top: 5px;
+}
+
+a {
+    width: 30px;
+    height: 45px;
+    border: 3px solid transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+a:hover {
+    border: 3px solid rgb(210, 72, 59);
+    border-radius: 5px;
+}
+
+.flavourButton {
+    width: 50px;
+    height: 70px;
+    background: white;
+    border: 3px solid #ffb8b8;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.flavourButton:hover {
+    border: 3px solid rgb(221, 25, 25);
+    box-shadow: rgba(221, 25, 25, 0.35) 0 0 15px;
+}
+
+.doubleFlavourButton {
+    width: 50px;
+    height: 70px;
+    background: white;
+    border: 3px solid #ffb8b8;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.doubleFlavourButton:hover {
+    border: 3px solid rgb(221, 25, 25);
+    box-shadow: rgba(221, 25, 25, 0.35) 0 0 15px;
+}
+
+.flavour {
+    width: 25px;
+}
+
+footer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-image: url('image/wood.png');
+    background-repeat: repeat;
+    border-top: 10px solid rgb(73, 25, 0);
+    border-radius: 0 0 5px 5px;
+    object-fit: fill;
+    transform: translatey(-10px);
+}
+
+@media screen and (min-width: 320px) and (max-width: 800px) {
+
+    #quiz {
+        width: 80%;
+    }
+    
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .answerButton {
+        width: 80%;
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .answerButton:first-of-type {
+        margin-top: 20px;
+    }
+
+    #moneyWin {
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    #balance {
+        width: 50%;
+        height: auto;
+        margin: 0;
+        padding: 5px;
+        align-self: center;
+    }
+
+    header > h2 {
+        font-size: 28px;
+    }
+
+    .text {
+        padding: 10px;
+    }
+
+    #conversation {
+        font-size: 15px;
+    }
+
+    #iceCream {
+        row-gap: 3px;
+    }
+
+    .flavourButton {
+        width: 45px;
+        height: 55px;
+        border: 2px solid #ffb8b8;
+    }
+    
+    .doubleFlavourButton {
+        width: 45px;
+        height: 55px;
+        border: 2px solid #ffb8b8;
+    }
+
+    #buttons {
+        width: 60%;
+    }
+
+    .finish, .restart {
+        width: 80%;
+    }
+
+    #purchaseList {
+        width: 80%;
+        height: 80%;
+        font-size: 15px;
+    }
+
+    #purchaseList > div {
+        margin: 0 0 5px 0;
+    }
+}
